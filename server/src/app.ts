@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import projectRoutes from './routes/projectRoutes';
 import taskRoutes from './routes/taskRoutes';
 import searchRoutes from './routes/searchRoutes';
+import userRoutes from './routes/userRoutes';
 // import morgan from 'morgan';
 
 // Configurations
@@ -24,6 +25,7 @@ app.use(cors());
 app.use('/projects', projectRoutes);
 app.use('/tasks', taskRoutes);
 app.use('/search', searchRoutes);
+app.use('/users', userRoutes);
 
 // Routes
 app.get('/', (req, res) => {
