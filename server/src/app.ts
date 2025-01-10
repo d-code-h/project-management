@@ -5,6 +5,7 @@ import projectRoutes from './routes/projectRoutes';
 import taskRoutes from './routes/taskRoutes';
 import searchRoutes from './routes/searchRoutes';
 import userRoutes from './routes/userRoutes';
+import teamRoutes from './routes/teamRoutes';
 // import morgan from 'morgan';
 
 // Configurations
@@ -26,6 +27,7 @@ app.use('/projects', projectRoutes);
 app.use('/tasks', taskRoutes);
 app.use('/search', searchRoutes);
 app.use('/users', userRoutes);
+app.use('/teams', teamRoutes);
 
 // Routes
 app.get('/', (req, res) => {
