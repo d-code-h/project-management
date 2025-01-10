@@ -100,3 +100,5 @@ declare interface NewTypeProps {
 }
 
 declare type TaskTypeItems = "task" | "milestone" | "project";
+
+declare type PriorityType = "Urgent" | "High" | "Medium" | "Low" | "Backlog";
