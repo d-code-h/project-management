@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "module": "app.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run build && node dist/app.js",
+    "dev": "bun --watch ./src/app.ts",
+    "seed": "bun prisma/seed.ts",
+    "build": "bun build ./src/app.ts --outdir ./dist"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.10.5",
+    "concurrently": "^9.1.2",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0",
+    "prisma": "^6.2.1"
+  }
+}
