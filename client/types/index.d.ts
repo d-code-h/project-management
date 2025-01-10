@@ -6,21 +6,6 @@ declare interface Project {
   endDate?: string;
 }
 
-declare enum Priority {
-  Urgent = "Urgent",
-  High = "High",
-  Medium = "Medium",
-  Low = "Low",
-  Backlog = "Backlog",
-}
-
-declare enum Status {
-  ToDo = "To Do",
-  WorkInProgress = "Work In Progress",
-  UnderReview = "Under Review",
-  Completed = "Completed",
-}
-
 declare interface User {
   userId?: number;
   username: string;
@@ -75,4 +60,41 @@ declare interface SidebarLinkProps {
   href: string;
   icon: LucideIcon;
   label: string;
+}
+
+declare interface ProjectProps {
+  id: string;
+}
+
+declare type BoardProps = {
+  id: string;
+  setIsModalNewTaskOpen: (isOpen: boolean) => void;
+};
+
+declare type TaskProps = {
+  task: Task;
+};
+
+declare interface ModalNewTaskProps {
+  isOpen: boolean;
+  onClose: () => void;
+  id?: string | null;
+}
+
+declare interface TabButtonProps {
+  name: string;
+  icon: React.ReactNode;
+  setActiveTab: (tabName: string) => void;
+  activeTab: string;
+}
+
+declare interface ProjectHeaderProps {
+  activeTab: string;
+  setActiveTab: (tabName: string) => void;
+}
+
+declare interface NewTypeProps {
+  name: string;
+  buttonComponent?: ReactNode;
+  isSmallText?: boolean;
 }
