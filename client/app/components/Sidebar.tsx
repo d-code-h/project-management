@@ -1,13 +1,14 @@
 "use client";
 import { links, sidebarLinks } from "@/constants";
 import clsx from "clsx";
-import { ChevronDown, ChevronUp, LockIcon, X } from "lucide-react";
+import { Briefcase, ChevronDown, ChevronUp, LockIcon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/redux";
 import { setIsSidebarCollapsed } from "../../store/state";
+import { useGetProjectsQuery } from "@/store/api";
 
 const Sidebar = () => {
   const [showProjects, setShowProjects] = useState(true);
@@ -17,14 +18,15 @@ const Sidebar = () => {
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed,
   );
+  const { data: projects } = useGetProjectsQuery();
   return (
     <div
       className={clsx(
-        "fixed z-40 flex h-full flex-col justify-between overflow-y-auto bg-white shadow-xl transition-all duration-300 dark:bg-black",
+        "fixed z-40 h-full flex-col justify-between space-y-2 overflow-y-auto bg-white shadow-xl transition-all duration-300 dark:bg-black",
         isSidebarCollapsed ? "w-0" : "w-64",
       )}
     >
-      <div className="flex h-[100%] w-full flex-col justify-start">
+      <div className="flex w-full flex-col justify-start">
         {/* Top Logo */}
         <div className="z-50 flex min-h-[56px] w-64 items-center justify-between bg-white px-6 pt-3 dark:bg-black">
           <div className="text-xl font-bold text-gray-800 dark:text-white">
@@ -41,6 +43,7 @@ const Sidebar = () => {
             </button>
           )}
         </div>
+
         {/* Team */}
         <div className="flex items-center gap-5 border-y-[1.5px] border-gray-200 px-8 py-4 dark:border-gray-700">
           <Image src="/logo.png" alt="logo" width={40} height={40} />
@@ -63,20 +66,28 @@ const Sidebar = () => {
         ))}
       </nav>
 
-      {/* Project Links */}
+      {/* Projects List */}
       <button
         onClick={() => setShowProjects((prev) => !prev)}
         className="flex w-full items-center justify-between px-8 py-3 text-gray-500"
       >
-        <span>Projects</span>
+        <span className="">Projects</span>
         {showProjects ? (
-          <ChevronUp className="size-5" />
+          <ChevronUp className="h-5 w-5" />
         ) : (
-          <ChevronDown className="size-5" />
+          <ChevronDown className="h-5 w-5" />
         )}
       </button>
-
-      {/* Projects List */}
+      {/* PROJECTS LIST */}
+      {showProjects &&
+        projects?.map((project) => (
+          <SidebarLink
+            key={project.id}
+            icon={Briefcase}
+            label={project.name}
+            href={`/projects/${project.id}`}
+          />
+        ))}
 
       {/* Priorities Links */}
       <button
