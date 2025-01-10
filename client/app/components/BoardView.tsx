@@ -1,4 +1,4 @@
-import { useGetTasksQuery, useUpdateTaskStatusMutation } from "@/app/store/api";
+import { useGetTasksQuery, useUpdateTaskStatusMutation } from "@/store/api";
 import React from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";

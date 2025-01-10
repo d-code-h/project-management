@@ -98,3 +98,5 @@ declare interface NewTypeProps {
   buttonComponent?: ReactNode;
   isSmallText?: boolean;
 }
+
+declare type TaskTypeItems = "task" | "milestone" | "project";

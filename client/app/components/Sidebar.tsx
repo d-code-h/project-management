@@ -6,8 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../store/redux";
-import { setIsSidebarCollapsed } from "../store/state";
+import { useAppDispatch, useAppSelector } from "../../store/redux";
+import { setIsSidebarCollapsed } from "../../store/state";
 
 const Sidebar = () => {
   const [showProjects, setShowProjects] = useState(true);
