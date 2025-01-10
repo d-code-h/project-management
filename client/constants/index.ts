@@ -66,3 +66,10 @@ export const sidebarLinks = [
     href: "/priority/backlog",
   },
 ];
+
+export const userSettings = {
+  username: "johndoe",
+  email: "john.doe@example.com",
+  teamName: "Development Team",
+  roleName: "Developer",
+};
