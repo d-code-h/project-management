@@ -1,7 +1,8 @@
-export default function Home() {
-  return (
-    <>
-      <h1 className="text-center">Hello Managers</h1>
-    </>
-  );
-}
+import React from "react";
+import HomePageWrapper from "./components/HomeWrapper";
+
+const HomePage = () => {
+  return <HomePageWrapper />;
+};
+
+export default HomePage;
