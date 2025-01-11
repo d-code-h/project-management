@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'project-management',
       script: 'bun',
-      args: 'bun dev',
+      args: 'dev',
       env: {
         NODE_ENV: 'development',
       },

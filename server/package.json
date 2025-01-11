@@ -1,7 +1,6 @@
 {
   "name": "server",
   "module": "app.ts",
-  "type": "module",
   "scripts": {
     "start": "bun run build && node dist/app.js",
     "dev": "bun --watch ./src/app.ts",

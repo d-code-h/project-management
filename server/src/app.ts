@@ -6,7 +6,7 @@ import taskRoutes from './routes/taskRoutes';
 import searchRoutes from './routes/searchRoutes';
 import userRoutes from './routes/userRoutes';
 import teamRoutes from './routes/teamRoutes';
-// import morgan from 'morgan';
+import morgan from 'morgan';
 
 // Configurations
 const app = express();
@@ -19,7 +19,7 @@ app.use(
     policy: 'cross-origin',
   }),
 );
-// // app.use(morgan('common'));
+app.use(morgan('common'));
 app.use(cors());
 
 // Route imports
