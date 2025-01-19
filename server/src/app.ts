@@ -1,4 +1,5 @@
 import express from 'express';
+import type { Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import projectRoutes from './routes/projectRoutes';
@@ -22,17 +23,17 @@ app.use(
 app.use(morgan('common'));
 app.use(cors());
 
+// Routes
+app.get('/', (req, res) => {
+  res.send('This is home route');
+});
+
 // Route imports
 app.use('/projects', projectRoutes);
 app.use('/tasks', taskRoutes);
 app.use('/search', searchRoutes);
 app.use('/users', userRoutes);
 app.use('/teams', teamRoutes);
-
-// Routes
-app.get('/', (req, res) => {
-  res.send('This is home route');
-});
 
 // Server
 const PORT = Number(process.env.PORT) || 4000;

@@ -47,7 +47,7 @@ export const postUser = async (req: Request, res: Response) => {
         teamId,
       },
     });
-    res.status(200).json({ message: 'User Created Successfully', newUser });
+    res.status(201).json({ message: 'User Created Successfully', newUser });
   } catch (error: any) {
     res
       .status(500)

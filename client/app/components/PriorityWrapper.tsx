@@ -5,7 +5,7 @@ import Header from "./Header";
 import ModalNewTask from "./ModalNewTask";
 import TaskCard from "./TaskCard";
 import { dataGridClassNames, dataGridSxStyles } from "@/lib";
-import { useGetTasksByUserQuery } from "@/store/api";
+import { useGetAuthUserQuery, useGetTasksByUserQuery } from "@/store/api";
 // import { useGetAuthUserQuery, useGetTasksByUserQuery } from "@/store/api";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import React, { useState } from "react";
@@ -69,9 +69,9 @@ const PriorityWrapper = ({ priorityId }: { priorityId: PriorityType }) => {
   const [view, setView] = useState("list");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
 
-  // const { data: currentUser } = useGetAuthUserQuery({});
-  // const userId = currentUser?.userDetails?.userId ?? null ;
-  const userId = 1;
+  const { data: currentUser } = useGetAuthUserQuery({});
+  const userId = currentUser?.userDetails?.userId ?? null;
+
   const {
     data: tasks,
     isLoading,
