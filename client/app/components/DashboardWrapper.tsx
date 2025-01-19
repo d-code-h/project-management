@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import StoreProvider, { useAppSelector } from "../../store/redux";
+import AuthProvider from "./AuthProvider";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const isSidebarCollapsed = useAppSelector(
@@ -40,7 +41,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 const DashboardWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <StoreProvider>
-      <DashboardLayout>{children}</DashboardLayout>
+      <AuthProvider>
+        <DashboardLayout>{children}</DashboardLayout>
+      </AuthProvider>
     </StoreProvider>
   );
 };
