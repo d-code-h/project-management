@@ -1,6 +1,6 @@
 # Project Management System 📋
 
-A full-featured project management system built with a client-server architecture. The client is developed using **Next.js** and **TypeScript**, while the server leverages **Node.js**, **Prisma**, and **Bun** for backend logic and database interaction.
+A full-featured project management system built with a client-server architecture. The client is developed using **Next.js** and **TypeScript**, while the server leverages **Node.js**, **Prisma**, and **Bun** for backend logic and database interaction. The project is deployed on **AWS**.
 
 ---
 
@@ -112,8 +112,11 @@ The backend is powered by **Node.js**, **Prisma**, and **Bun**. It ensures effic
 
 ## Usage
 
-- Access the client application at: http://localhost:3000
-- The server will run at: http://localhost:4000
+- Development
+  - Access the client application at: http://localhost:3000
+  - The server will run at: http://localhost:4000
+- Deployment
+  - App link: https://main.d2wvw6k7wxmiaq.amplifyapp.com/
 
 ## Technology Stack
 
@@ -130,3 +133,11 @@ The backend is powered by **Node.js**, **Prisma**, and **Bun**. It ensures effic
   - Prisma
   - PostgreSQL
   - Helmet (for security)
+- Deployment
+  - AWS EC2
+  - AWS Cognito
+  - AWS Amplify
+  - AWS RDS
+  - AWS API Gateway
+  - AWS Lambda
+  - AWS S3
